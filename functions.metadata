@@ -1,0 +1,24 @@
+[
+  {
+    "name": "GetAlertSms",
+    "scriptFile": "TIPTwilioSendSms.dll",
+    "entryPoint": "TIPTwilioSendSms.GetAlertSms.Run",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "events",
+        "direction": "In",
+        "type": "eventHubTrigger",
+        "eventHubName": "TNH_EVENT_HUB_NAME",
+        "connection": "TNH_EVENT_HUB_CONNECTION",
+        "cardinality": "Many",
+        "properties": {
+          "supportsDeferredBinding": "True"
+        }
+      }
+    ]
+  }
+]
